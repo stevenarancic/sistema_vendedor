@@ -96,7 +96,7 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                         <input type="text" name="instagram" class="form-control" placeholder="nome_de.usuario123" value="<?php echo $instagram ?>">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button type="submit" class="btn btn-success">Confirmar Edição</button>
                 <a href="../../index.php" class="btn">Cancelar</a>
             </form>
         </section>
