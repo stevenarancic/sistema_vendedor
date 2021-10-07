@@ -55,9 +55,9 @@ $vendedorDAO->readVendedor();
                             </div>
                         </div>
                         <div class='col-md-4 d-flex flex-row-reverse '>
-                            <button class='btn btn-light'>
+                            <a class='btn btn-light' href="App/View/editarVendedor.php?id=<?= $vendedor['id'] ?>">
                                 <i class='bi bi-pencil-square'></i>
-                            </button>
+                            </a>
                             <a class='btn btn-danger' href="App/Controller/DeleteVendedor.php?id=<?= $vendedor['id'] ?>">
                                 <i class='bi bi-trash'></i>
                             </a>

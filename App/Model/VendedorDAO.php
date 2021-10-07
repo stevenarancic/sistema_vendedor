@@ -43,6 +43,7 @@ class VendedorDAO
 
         $statement = Conexao::getInstance()->prepare($sql);
 
+        $statement->bindValue(':id', $vendedor->getId());
         $statement->bindValue(':nome', $vendedor->getNome());
         $statement->bindValue(':sobrenome', $vendedor->getSobrenome());
         $statement->bindValue(':telefone1', $vendedor->getTelefone1());
@@ -63,5 +64,22 @@ class VendedorDAO
         $statement->bindValue(':id', $id);
 
         $statement->execute();
+    }
+
+    public function filtrarVendedor($id)
+    {
+        $sql = "SELECT * FROM vendedor WHERE id = :id";
+
+        $statement = Conexao::getInstance()->prepare($sql);
+
+        $statement->bindValue(':id', $id);
+
+        $statement->execute();
+
+        if ($statement->rowCount() > 0) {
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return "Usuário não encontrado :(";
+        }
     }
 }
