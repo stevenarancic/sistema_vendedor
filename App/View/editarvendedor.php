@@ -41,7 +41,7 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
         </div>
     </header>
     <main>
-        <section class="article">
+        <section class="article container">
             <form action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST">
                 <div class="mb-3">
                     <label for="">
