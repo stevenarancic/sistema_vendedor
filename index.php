@@ -75,34 +75,42 @@ $vendedorDAO->readVendedor();
         </section>
         <div class="container-fluid bg-white">
             <div class="container pt-4">
-                <h2 class="p-5" style="text-align: center;">Nossos Vendedores</h2>
-                <div class="owl-carousel owl-theme bg-body pb-5">
+                <h2 class="p-5 pb-4 text-uppercase border-bottom border-danger border-5 rounded-3 tw-bold " style="text-align: center;">Nossos Vendedores</h2>
+                <div class="owl-carousel owl-theme bg-body pb-4 pt-4">
                     <?php foreach ($vendedorDAO->readVendedor() as $vendedor) { ?>
-                        <div class="d-flex flex-row" style="max-height: 10rem;">
-                            <div class="col-4">
+                        <div class="d-flex flex-row align-items-center" style="max-height: 15rem;">
+                            <div class="ms-5 col-4">
                                 <p style="text-align: justify;">
                                     Cras ut eleifend ex, lobortis cursus arcu. Praesent diam dolor, pulvinar at tortor a, pharetra tempor nisl. Praesent pellentesque dolor ut pellentesque ultrices. In id nisl ut dolor consequat congue. Proin nec enim lacus. Duis sed semper erat. Sed eu malesuada quam, sit amet tempus dolor.
                                 </p>
                             </div>
-                            <div class="ms-3 col-8 ms-4" style="text-align: justify;">
+                            <div class="ms-3 col-8 ms-2" style="text-align: justify;">
                                 <h3>
                                     <?= $vendedor['nome']; ?> <?= $vendedor['sobrenome']; ?>
                                 </h3>
                                 <h6 class=' mb-2 text-muted'>
-                                    <?= $vendedor['telefone1']; ?> <?= $vendedor['telefone2']; ?>
-                                </h6>
-                                <p>
                                     <?= $vendedor['email']; ?>
-                                </p>
-                                <a href='#' class='btn'>
-                                    <i class='bi bi-facebook'></i> <?= $vendedor['facebook']; ?>
+                                </h6>
+                                <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn'>
+                                    <i class='bi bi-whatsapp text-success fs-2'></i>
+                                    <!--?=// $vendedor['telefone1']; ?-->
                                 </a>
-                                <a href='#' class='btn'>
-                                    <i class='bi bi-instagram'></i> <?= $vendedor['instagram']; ?>
+                                <a href='https://www.facebook.com/<?php echo $vendedor['facebook'] ?>/' class='btn'>
+                                    <i class='bi bi-facebook text-primary fs-2'></i>
+                                    <!--?=// $vendedor['facebook']; ?-->
+                                </a>
+                                <a href='https://www.instagram.com/<?php echo $vendedor['instagram'] ?>/' class='btn'>
+                                    <i class='bi bi-instagram text-secondary fs-2'></i>
+                                    <!--?=//$vendedor['instagram'];?-->
                                 </a>
                             </div>
                         </div>
                     <?php } ?>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto pb-5">
+                    <a href="#" class="btn btn-danger btn-lg">
+                        Ver Todos
+                    </a>
                 </div>
             </div>
         </div>
