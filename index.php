@@ -76,15 +76,16 @@ $vendedorDAO->readVendedor();
         <div class="container-fluid bg-white">
             <div class="container pt-4">
                 <h2 class="p-5 pb-4 text-uppercase border-bottom border-danger border-5 rounded-3 tw-bold " style="text-align: center;">Nossos Vendedores</h2>
+            </div>
+            <div class="container">
                 <div class="owl-carousel owl-theme bg-body pb-4 pt-4">
                     <?php foreach ($vendedorDAO->readVendedor() as $vendedor) { ?>
                         <div class="d-flex flex-row align-items-center" style="max-height: 15rem;">
-                            <div class="ms-5 col-4">
-                                <p style="text-align: justify;">
-                                    Cras ut eleifend ex, lobortis cursus arcu. Praesent diam dolor, pulvinar at tortor a, pharetra tempor nisl. Praesent pellentesque dolor ut pellentesque ultrices. In id nisl ut dolor consequat congue. Proin nec enim lacus. Duis sed semper erat. Sed eu malesuada quam, sit amet tempus dolor.
-                                </p>
+                            <!-- <div class="col-4" style="margin-left: 8%;"></div> -->
+                            <div class="col">
+                                <img src="assets/img/vendedores/profile.png" alt="Imagem" style="border-radius: 50%; width: 13rem!important; height: 13rem!important;">
                             </div>
-                            <div class="ms-3 col-8 ms-2" style="text-align: justify;">
+                            <div class="ms-3 col ms-2" style="text-align: justify;">
                                 <h3>
                                     <?= $vendedor['nome']; ?> <?= $vendedor['sobrenome']; ?>
                                 </h3>
@@ -107,10 +108,12 @@ $vendedorDAO->readVendedor();
                         </div>
                     <?php } ?>
                 </div>
-                <div class="d-grid gap-2 col-6 mx-auto pb-5">
-                    <a href="#" class="btn btn-danger btn-lg">
-                        Ver Todos
-                    </a>
+                <div class="container">
+                    <div class="d-grid gap-2 col-6 mx-auto pb-5">
+                        <a href="#" class="btn btn-danger btn-lg">
+                            Ver Todos
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
