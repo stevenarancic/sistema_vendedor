@@ -74,37 +74,35 @@ $vendedorDAO->readVendedor();
             ?>
         </section>
         <div class="container-fluid bg-white">
-            <div class="container">
-                <div>
-                    <h2>Nossos Vendedores</h2>
-                    <div class="owl-carousel owl-theme bg-body">
-                        <?php foreach ($vendedorDAO->readVendedor() as $vendedor) { ?>
-                            <div class="d-flex flex-row">
-                                <div class="col-4">
-                                    <p style="text-align: justify;">
-                                        Cras ut eleifend ex, lobortis cursus arcu. Praesent diam dolor, pulvinar at tortor a, pharetra tempor nisl. Praesent pellentesque dolor ut pellentesque ultrices. In id nisl ut dolor consequat congue. Proin nec enim lacus. Duis sed semper erat. Sed eu malesuada quam, sit amet tempus dolor. Duis bibendum, leo ac elementum pulvinar, ante mi consectetur lorem, ut auctor tortor ex vitae nibh. Fusce ex tortor, egestas et elit nec, elementum feugiat metus.
-                                    </p>
-                                </div>
-                                <div class="ms-3 col-8" style="text-align: justify;">
-                                    <h5>
-                                        <?= $vendedor['nome']; ?> <?= $vendedor['sobrenome']; ?>
-                                    </h5>
-                                    <h6 class=' mb-2 text-muted'>
-                                        <?= $vendedor['telefone1']; ?> <?= $vendedor['telefone2']; ?>
-                                    </h6>
-                                    <p>
-                                        <?= $vendedor['email']; ?>
-                                    </p>
-                                    <a href='#' class='btn'>
-                                        <i class='bi bi-facebook'></i> <?= $vendedor['facebook']; ?>
-                                    </a>
-                                    <a href='#' class='btn'>
-                                        <i class='bi bi-instagram'></i> <?= $vendedor['instagram']; ?>
-                                    </a>
-                                </div>
+            <div class="container pt-4">
+                <h2 class="p-5" style="text-align: center;">Nossos Vendedores</h2>
+                <div class="owl-carousel owl-theme bg-body pb-5">
+                    <?php foreach ($vendedorDAO->readVendedor() as $vendedor) { ?>
+                        <div class="d-flex flex-row" style="max-height: 10rem;">
+                            <div class="col-4">
+                                <p style="text-align: justify;">
+                                    Cras ut eleifend ex, lobortis cursus arcu. Praesent diam dolor, pulvinar at tortor a, pharetra tempor nisl. Praesent pellentesque dolor ut pellentesque ultrices. In id nisl ut dolor consequat congue. Proin nec enim lacus. Duis sed semper erat. Sed eu malesuada quam, sit amet tempus dolor.
+                                </p>
                             </div>
-                        <?php } ?>
-                    </div>
+                            <div class="ms-3 col-8 ms-4" style="text-align: justify;">
+                                <h3>
+                                    <?= $vendedor['nome']; ?> <?= $vendedor['sobrenome']; ?>
+                                </h3>
+                                <h6 class=' mb-2 text-muted'>
+                                    <?= $vendedor['telefone1']; ?> <?= $vendedor['telefone2']; ?>
+                                </h6>
+                                <p>
+                                    <?= $vendedor['email']; ?>
+                                </p>
+                                <a href='#' class='btn'>
+                                    <i class='bi bi-facebook'></i> <?= $vendedor['facebook']; ?>
+                                </a>
+                                <a href='#' class='btn'>
+                                    <i class='bi bi-instagram'></i> <?= $vendedor['instagram']; ?>
+                                </a>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -119,8 +117,11 @@ $vendedorDAO->readVendedor();
             $(".owl-carousel").owlCarousel({
                 loop: true,
                 autoplay: true,
+                autoplayTimeout: 5000,
                 margin: 10,
                 nav: false,
+                dots: false,
+                rewind: true,
                 responsive: {
                     0: {
                         items: 1,
