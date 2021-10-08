@@ -20,6 +20,18 @@ $vendedorDAO->readVendedor();
     <link rel="stylesheet" href="assets/OwlCarousel/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/OwlCarousel/dist/assets/owl.theme.default.min.css">
 
+    <script>
+        import {
+            createPopper
+        } from '@popperjs/core';
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+    <!-- main css -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Sistema de Vendedores</title>
@@ -78,8 +90,9 @@ $vendedorDAO->readVendedor();
     <footer>
         Feito por @SteveNarancic
     </footer>
-    <!-- owl carousel -->
+    <!-- jquery -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- owl carousel -->
     <script>
         $(document).ready(function() {
             $(".owl-carousel").owlCarousel({

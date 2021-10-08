@@ -1,3 +1,19 @@
+<style>
+    @media (max-width: 900px) {
+        img {
+            width: 5rem !important;
+            height: 5rem !important;
+        }
+    }
+
+    @media (min-width: 900px) {
+        img {
+            width: 13rem !important;
+            height: 13rem !important;
+            margin-inline-end: 1rem !important;
+        }
+    }
+</style>
 <div class="container-fluid bg-white">
     <div class="container pt-4">
         <h2 class="p-5 pb-4 text-uppercase border-bottom border-danger border-5 rounded-3 tw-bold " style="text-align: center;">Nossos Vendedores</h2>
@@ -8,7 +24,7 @@
                 <div class="d-flex flex-row align-items-center" style="max-height: 15rem;">
                     <!-- <div class="col-4" style="margin-left: 8%;"></div> -->
                     <div class="col">
-                        <img class="rounded-circle me-3 float-end" src="assets/img/vendedores/profile.png" alt="Imagem" style="width: 13rem!important; height: 13rem!important;">
+                        <img class="rounded-circle float-end" src="assets/img/vendedores/profile.png" alt="Imagem">
                     </div>
                     <div class="ms-3 col" style="text-align: justify;">
                         <h3>
@@ -17,7 +33,7 @@
                         <h6 class=' mb-2 text-muted'>
                             <?= $vendedor['email']; ?>
                         </h6>
-                        <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn'>
+                        <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn' data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
                             <i class='bi bi-whatsapp text-success fs-2'></i>
                             <!--?=// $vendedor['telefone1']; ?-->
                         </a>

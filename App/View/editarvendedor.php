@@ -42,7 +42,9 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
     </header>
     <main>
         <section class="article container">
-            <a href="../../index.php" class="btn mt-4 text-secondary fs-5"><i class="bi bi-arrow-left"></i> Voltar</a>
+            <a href="../../index.php" class="btn mt-4 text-secondary fs-5">
+                <i class="bi bi-arrow-left"></i> Voltar
+            </a>
             <form action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST">
                 <div class="form-floating mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
