@@ -140,7 +140,7 @@ $vendedorDAO->readVendedor();
             })
             Toast.fire({
                 icon: 'success',
-                title: 'Vendedor excluído!'
+                title: 'Excluído com sucesso!'
             })
         }
 
@@ -158,7 +158,7 @@ $vendedorDAO->readVendedor();
             })
             Toast.fire({
                 icon: 'success',
-                title: 'Vendedor criado!'
+                title: 'Criado com sucesso!'
             })
         }
 
@@ -176,7 +176,7 @@ $vendedorDAO->readVendedor();
             })
             Toast.fire({
                 icon: 'success',
-                title: 'Vendedor Atualizado!'
+                title: 'Atualizado com sucesso!'
             })
         }
     </script>
