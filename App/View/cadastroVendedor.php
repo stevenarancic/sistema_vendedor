@@ -25,20 +25,20 @@
     <main>
         <section class="article container">
             <form action="../Controller/CreateVendedor.php" method="POST">
-                <div class="form-floating mb-3">
-                    <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" id="inputNome">
+                <div class="form-floating mb-3 mt-4">
+                    <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" id="inputNome" required>
                     <label for="inputNome">
                         Nome <i class="bi bi-person"></i>
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="sobrenome" class="form-control" placeholder="ex: Oliveira">
+                    <input type="text" name="sobrenome" class="form-control" placeholder="ex: Oliveira" required>
                     <label for="">
                         Sobrenome <i class="bi bi-person"></i>
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="telefone1" class="form-control" placeholder="(99) 99999-9999">
+                    <input type="text" name="telefone1" class="form-control" placeholder="(99) 99999-9999" required>
                     <label for="">
                         Telefone <i class="bi bi-phone"></i>
                     </label>
