@@ -1,8 +1,8 @@
 <style>
     @media (max-width: 900px) {
         img {
-            width: 5rem !important;
-            height: 5rem !important;
+            width: 8rem !important;
+            height: 8rem !important;
         }
     }
 
