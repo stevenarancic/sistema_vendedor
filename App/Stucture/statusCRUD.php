@@ -1,3 +1,4 @@
+<!-- Mostra os Toasts de status baseado nos status da requisição -->
 <?php
 if (isset($_SESSION['status'])) {
     switch ($_SESSION['status']) {
