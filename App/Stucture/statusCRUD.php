@@ -1,4 +1,4 @@
-<!-- Mostra os Toasts de status baseado nos status da requisição -->
+<!-- Mostra os Toasts de status baseado nos status da requisição. precisa do arquivo StatusCRUD.js para funcionar. -->
 <?php
 if (isset($_SESSION['status'])) {
     switch ($_SESSION['status']) {

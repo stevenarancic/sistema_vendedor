@@ -1,4 +1,4 @@
-// Tem os Toasts de status das requisições de banco.
+// Tem os Toasts de status das requisições de banco. precisa do statusCRUD.php para funcionar.
 function deleteConfirmation() {
     const Toast = Swal.mixin({
         toast: true,

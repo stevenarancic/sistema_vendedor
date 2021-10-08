@@ -86,6 +86,7 @@ $vendedorDAO->readVendedor();
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
     <!-- owl carousel -->
+    <script src="assets/OwlCarousel/dist/owl.carousel.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".owl-carousel").owlCarousel({
@@ -104,7 +105,6 @@ $vendedorDAO->readVendedor();
             });
         });
     </script>
-    <script src="assets/OwlCarousel/dist/owl.carousel.min.js"></script>
 
     <!-- sweetalert -->
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
