@@ -16,12 +16,8 @@ header, footer {
     text-align: center;
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 40%;
-    margin: 2rem auto;
+.container {
+    max-width: 720px;
 }
 
 .article {

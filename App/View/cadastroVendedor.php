@@ -23,37 +23,36 @@
         </div>
     </header>
     <main>
-        <section class="article">
+        <section class="article container">
             <form action="../Controller/CreateVendedor.php" method="POST">
-                <div class="mb-3">
-                    <label for="">
+                <div class="form-floating mb-3">
+                    <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" id="inputNome">
+                    <label for="inputNome">
                         Nome <i class="bi bi-person"></i>
                     </label>
-                    <input type="text" name="nome" class="form-control" placeholder="ex: Carlos">
                 </div>
-                <div class="mb-3">
+                <div class="form-floating mb-3">
+                    <input type="text" name="sobrenome" class="form-control" placeholder="ex: Oliveira">
                     <label for="">
                         Sobrenome <i class="bi bi-person"></i>
                     </label>
-                    <input type="text" name="sobrenome" class="form-control" placeholder="ex: Oliveira">
                 </div>
-                <div class="mb-3">
+                <div class="form-floating mb-3">
+                    <input type="text" name="telefone1" class="form-control" placeholder="(99) 99999-9999">
                     <label for="">
                         Telefone <i class="bi bi-phone"></i>
                     </label>
-                    <input type="text" name="telefone1" class="form-control" placeholder="(99) 99999-9999">
                 </div>
-                <div class="mb-3">
+                <div class="form-floating mb-3">
+                    <input type="text" name="telefone2" class="form-control" placeholder="(99) 99999-9999">
                     <label for="">
                         Telefone 2 (opcional) <i class="bi bi-telephone"></i>
                     </label>
-                    <input type="text" name="telefone2" class="form-control" placeholder="(99) 99999-9999">
                 </div>
-                <div class="mb-3">
-                    <label for="">
+                <div class="form-floating mb-3">
+                    <input type="text" name="email" class="form-control" placeholder="exemplo@exemplo.com.br"> <label for="">
                         E-Mail <i class="bi bi-envelope"></i>
                     </label>
-                    <input type="text" name="email" class="form-control" placeholder="exemplo@exemplo.com.br">
                     <div id="emailHelp" class="form-text">Não compartilharemos seu e-mail com ninguém.</div>
                 </div>
                 <div class="mb-3">
@@ -67,7 +66,7 @@
                         <input type="text" name="facebook" class="form-control" placeholder="nome.de.usuario11">
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class=" mb-3">
                     <label for="">
                         Instagram <i class="bi bi-instagram"></i>
                     </label>

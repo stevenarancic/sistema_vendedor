@@ -12,16 +12,21 @@ $vendedorDAO->readVendedor();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/OwlCarousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/OwlCarousel/dist/assets/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Sistema de Vendedores</title>
 </head>
 
-<body>
-    <header class="bg-light">
+<body class="bg-light">
+    <header>
         <div class="container">
             <h1>
                 Sistema de Vendedores
@@ -29,7 +34,7 @@ $vendedorDAO->readVendedor();
         </div>
     </header>
     <main>
-        <section class="article">
+        <section class="article container">
             <a class="btn btn-success w-100 mb-3" href="App/View/cadastroVendedor.php">Cadastrar Vendedor</a>
             <?php
             foreach ($vendedorDAO->readVendedor() as $key => $vendedor) { ?>
@@ -68,10 +73,32 @@ $vendedorDAO->readVendedor();
             }
             ?>
         </section>
+        <?php require_once 'App/Stucture/bannerVendedores.php' ?>
     </main>
     <footer>
         Feito por @SteveNarancic
     </footer>
+    <!-- owl carousel -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                margin: 10,
+                nav: false,
+                dots: false,
+                rewind: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    }
+                }
+            });
+        });
+    </script>
+    <script src="assets/OwlCarousel/dist/owl.carousel.min.js"></script>
 </body>
 
 </html>
