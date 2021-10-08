@@ -32,6 +32,26 @@ $vendedorDAO->readVendedor();
             <h1>
                 Sistema de Vendedores
             </h1>
+            <div id="liveAlertPlaceholder">
+            </div>
+            <button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button>
+            <script>
+                var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+                var alertTrigger = document.getElementById('liveAlertBtn')
+
+                function alert(message, type) {
+                    var wrapper = document.createElement('div')
+                    wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+                    alertPlaceholder.append(wrapper)
+                }
+
+                if (alertTrigger) {
+                    alertTrigger.addEventListener('click', function() {
+                        alert('Nice, you triggered this alert message!', 'success')
+                    })
+                }
+            </script>
         </div>
     </header>
     <main>
@@ -64,9 +84,9 @@ $vendedorDAO->readVendedor();
                             <a class='btn btn-light' href="App/View/editarVendedor.php?id=<?= $vendedor['id'] ?>">
                                 <i class='bi bi-pencil-square'></i>
                             </a>
-                            <a class='btn btn-danger' href="App/Controller/DeleteVendedor.php?id=<?= $vendedor['id'] ?>">
-                                <i class='bi bi-trash'></i>
-                            </a>
+                            <button class="btn btn-danger" onclick="alertButton()">
+                                <i class="bi bi-trash"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -101,6 +121,26 @@ $vendedorDAO->readVendedor();
         });
     </script>
     <script src="assets/OwlCarousel/dist/owl.carousel.min.js"></script>
+    <!-- sweetalert -->
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script>
+        function alertButton() {
+            Swal.fire({
+                title: 'Tem certeza?',
+                text: 'Deseja mesmo apagar?',
+                icon: 'warning',
+                showConfirmButton: true,
+                confirmButtonText: 'Sim',
+                confirmButtonColor: '#78c696',
+                showDenyButton: true,
+                denyButtonText: 'Não',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location = "App/Controller/DeleteVendedor.php?id=<?= $vendedor['id'] ?>";
+                } else if (result.isDenied) {}
+            })
+        }
+    </script>
 </body>
 
 </html>
