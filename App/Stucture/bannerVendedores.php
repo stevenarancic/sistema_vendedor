@@ -33,17 +33,26 @@
                         <h6 class=' mb-2 text-muted'>
                             <?= $vendedor['email']; ?>
                         </h6>
-                        <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn'>
+                        <div class="tooltip">Hover over me
+                            <span class="tooltiptext">Tooltip text</span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn tooltip1'>
                             <i class='bi bi-whatsapp text-success fs-2'></i>
-                            <!--?=// $vendedor['telefone1']; ?-->
+                            <span class="tooltiptext">
+                                <?= $vendedor['telefone1']; ?>
+                            </span>
                         </a>
-                        <a href='https://www.facebook.com/<?php echo $vendedor['facebook'] ?>/' class='btn'>
+                        <a href='https://www.facebook.com/<?php echo $vendedor['facebook'] ?>/' class='btn tooltip1'>
                             <i class='bi bi-facebook text-primary fs-2'></i>
-                            <!--?=// $vendedor['facebook']; ?-->
+                            <span class="tooltiptext">
+                                <?= $vendedor['facebook']; ?>
+                            </span>
                         </a>
-                        <a href='https://www.instagram.com/<?php echo $vendedor['instagram'] ?>/' class='btn'>
+                        <a href='https://www.instagram.com/<?php echo $vendedor['instagram'] ?>/' class='btn tooltip1'>
                             <i class='bi bi-instagram text-secondary fs-2'></i>
-                            <!--?=//$vendedor['instagram'];?-->
+                            <span class="tooltiptext">
+                                <?= $vendedor['instagram']; ?>
+                            </span>
                         </a>
                     </div>
                 </div>
