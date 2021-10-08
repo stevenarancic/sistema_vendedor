@@ -38,19 +38,19 @@
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="telefone1" class="form-control" placeholder="(99) 99999-9999" required>
+                    <input type="tel" name="telefone1" class="form-control" placeholder="(99) 99999-9999" required>
                     <label for="">
                         Telefone <i class="bi bi-phone"></i>
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="telefone2" class="form-control" placeholder="(99) 99999-9999">
+                    <input type="tel" name="telefone2" class="form-control" placeholder="(99) 99999-9999">
                     <label for="">
                         Telefone 2 (opcional) <i class="bi bi-telephone"></i>
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="email" class="form-control" placeholder="exemplo@exemplo.com.br"> <label for="">
+                    <input type="email" name="email" class="form-control" placeholder="exemplo@exemplo.com.br"> <label for="">
                         E-Mail <i class="bi bi-envelope"></i>
                     </label>
                     <div id="emailHelp" class="form-text">Não compartilharemos seu e-mail com ninguém.</div>

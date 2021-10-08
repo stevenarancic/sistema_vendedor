@@ -42,8 +42,9 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
     </header>
     <main>
         <section class="article container">
+            <a href="../../index.php" class="btn mt-4 text-secondary fs-5"><i class="bi bi-arrow-left"></i> Voltar</a>
             <form action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST">
-                <div class="form-floating mb-3 mt-4">
+                <div class="form-floating mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
                     <label for="">
                         Nome <i class="bi bi-person"></i>
@@ -56,19 +57,19 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="telefone1" class="form-control" placeholder="(99) 99999-9999" value="<?php echo $telefone1 ?>" required>
+                    <input type="tel" name="telefone1" class="form-control" placeholder="(99) 99999-9999" value="<?php echo $telefone1 ?>" required>
                     <label for="">
                         Telefone <i class="bi bi-phone"></i>
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="telefone2" class="form-control" placeholder="(99) 99999-9999" value="<?php echo $telefone2 ?>">
+                    <input type="tel" name="telefone2" class="form-control" placeholder="(99) 99999-9999" value="<?php echo $telefone2 ?>">
                     <label for="">
                         Telefone 2 (opcional) <i class="bi bi-telephone"></i>
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" name="email" class="form-control" placeholder="exemplo@exemplo.com.br" value="<?php echo $email ?>">
+                    <input type="email" name="email" class="form-control" placeholder="exemplo@exemplo.com.br" value="<?php echo $email ?>">
                     <div id="emailHelp" class="form-text">Não compartilharemos seu e-mail com ninguém.</div>
                     <label for="">
                         E-Mail <i class="bi bi-envelope"></i>
@@ -97,7 +98,7 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                     </div>
                 </div>
                 <button type="submit" class="btn btn-success">Confirmar Edição</button>
-                <a href="../../index.php" class="btn">Cancelar</a>
+                <button type="reset" class="btn">Resetar Campos</button>
             </form>
         </section>
     </main>
