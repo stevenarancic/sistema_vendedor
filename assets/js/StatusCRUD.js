@@ -31,7 +31,7 @@ function createConfirmation() {
     })
     Toast.fire({
         icon: 'success',
-        title: 'Criado com sucesso!'
+        title: 'Cadastrado com sucesso!'
     })
 }
 
