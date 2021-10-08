@@ -47,19 +47,19 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                     <label for="">
                         Nome <i class="bi bi-person"></i>
                     </label>
-                    <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>">
+                    <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="">
                         Sobrenome <i class="bi bi-person"></i>
                     </label>
-                    <input type="text" name="sobrenome" class="form-control" placeholder="ex: Oliveira" value="<?php echo $sobrenome ?>">
+                    <input type="text" name="sobrenome" class="form-control" placeholder="ex: Oliveira" value="<?php echo $sobrenome ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="">
                         Telefone <i class="bi bi-phone"></i>
                     </label>
-                    <input type="text" name="telefone1" class="form-control" placeholder="(99) 99999-9999" value="<?php echo $telefone1 ?>">
+                    <input type="text" name="telefone1" class="form-control" placeholder="(99) 99999-9999" value="<?php echo $telefone1 ?>" required>
                 </div>
                 <div class="mb-3">
                     <label for="">
