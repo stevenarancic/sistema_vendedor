@@ -25,7 +25,7 @@
     <main>
         <section class="article container">
             <form action="../Controller/CreateVendedor.php" method="POST">
-                <div class="form-floating mb-3">
+                <div class="form-floating mb-3 mt-4">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" id="inputNome" required>
                     <label for="inputNome">
                         Nome <i class="bi bi-person"></i>
