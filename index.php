@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once 'vendor/autoload.php';
 
 $vendedorDAO = new \App\Model\VendedorDAO();
@@ -136,13 +138,49 @@ $vendedorDAO->readVendedor();
                     toast.addEventListener('mouseleave', Swal.resumeTimer)
                 }
             })
-
             Toast.fire({
                 icon: 'success',
                 title: 'Vendedor excluído!'
             })
         }
+
+        function createConfirmation() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+                icon: 'success',
+                title: 'Vendedor criado!'
+            })
+        }
+
+        function updateConfirmation() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+                icon: 'success',
+                title: 'Vendedor Atualizado!'
+            })
+        }
     </script>
+    <?php require_once 'App/Stucture/statusCRUD.php' ?>
 </body>
 
 </html>

@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+session_start();
+
 require_once '../../vendor/autoload.php';
 
 use App\Model as Model;
@@ -17,4 +19,5 @@ $vendedor->setInstagram($_POST['instagram']);
 $vendedorDAO = new Model\VendedorDAO();
 $vendedorDAO->updateVendedor($vendedor);
 
+$_SESSION['status'] = 'update';
 header('location: ../../index.php');
