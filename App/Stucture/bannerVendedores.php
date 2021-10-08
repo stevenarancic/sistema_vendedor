@@ -33,7 +33,7 @@
                         <h6 class=' mb-2 text-muted'>
                             <?= $vendedor['email']; ?>
                         </h6>
-                        <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn' data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                        <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn'>
                             <i class='bi bi-whatsapp text-success fs-2'></i>
                             <!--?=// $vendedor['telefone1']; ?-->
                         </a>
