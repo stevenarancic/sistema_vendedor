@@ -66,7 +66,7 @@ $vendedorDAO->readVendedor();
                             <a class='btn btn-light' href="App/View/editarVendedor.php?id=<?= $vendedor['id'] ?>">
                                 <i class='bi bi-pencil-square'></i>
                             </a>
-                            <button class="btn btn-danger" onclick="alertButton()">
+                            <button class="btn btn-danger" onclick="alertButton(<?= $vendedor['id'] ?>)">
                                 <i class="bi bi-trash"></i>
                             </button>
                         </div>
@@ -109,7 +109,7 @@ $vendedorDAO->readVendedor();
     <!-- sweetalert -->
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
     <script>
-        function alertButton() {
+        function alertButton(id) {
             Swal.fire({
                 title: 'Tem certeza?',
                 text: 'Deseja mesmo apagar?',
@@ -121,7 +121,7 @@ $vendedorDAO->readVendedor();
                 denyButtonText: 'Não',
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location = "App/Controller/DeleteVendedor.php?id=<?= $vendedor['id'] ?>";
+                    window.location = "App/Controller/DeleteVendedor.php?id=" + id;
                 } else if (result.isDenied) {}
             })
         }
