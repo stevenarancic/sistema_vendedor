@@ -42,10 +42,10 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
     </header>
     <main>
         <section class="article container">
-            <a href="../../index.php" class="btn mt-4 text-secondary fs-5">
+            <button type="button" class="btn mt-4 text-secondary fs-5" onclick="alertButton('Tem certeza?', 'Você perderá suas alterações.', 'voltar')">
                 <i class="bi bi-arrow-left"></i> Voltar
-            </a>
-            <form action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST">
+            </button>
+            <form id="myForm" action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST">
                 <div class="form-floating mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
                     <label for="">
@@ -100,10 +100,40 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                     </div>
                 </div>
                 <button type="submit" class="btn btn-success">Confirmar Edição</button>
-                <button type="reset" class="btn">Resetar Campos</button>
+                <button type="button" class="btn" onclick="alertButton('Tem certeza?', 'Essa ação não pode ser desfeita.', 'reset')">Resetar Campos</button>
             </form>
         </section>
     </main>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+    <script>
+        function alertButton(titulo, texto, condicional) {
+            Swal.fire({
+                title: title,
+                text: text,
+                icon: 'warning',
+                showConfirmButton: true,
+                confirmButtonText: 'Sim',
+                confirmButtonColor: '#78c696',
+                showDenyButton: true,
+                denyButtonText: 'Não',
+            }).then((result) => {
+                switch (conditional) {
+                    case 'reset':
+                        if (result.isConfirmed) {
+                            document.getElementById("myForm").reset();
+                        } else if (result.isDenied) {}
+                        break;
+                    case 'voltar':
+                        if (result.isConfirmed) {
+                            window.location = '../../index.php'
+                        } else if (result.isDenied) {}
+                        break;
+                    default:
+                        break;
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
