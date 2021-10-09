@@ -108,24 +108,7 @@ $vendedorDAO->readVendedor();
 
     <!-- sweetalert -->
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
-    <script>
-        function alertButton() {
-            Swal.fire({
-                title: 'Tem certeza?',
-                text: 'Deseja mesmo apagar?',
-                icon: 'warning',
-                showConfirmButton: true,
-                confirmButtonText: 'Sim',
-                confirmButtonColor: '#78c696',
-                showDenyButton: true,
-                denyButtonText: 'Não',
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location = "App/Controller/DeleteVendedor.php?id=<?= $vendedor['id'] ?>";
-                } else if (result.isDenied) {}
-            })
-        }
-    </script>
+    <script src="assets/js/Alerts.js"></script>
 
     <!-- statusCRUD -->
     <script src="assets/js/StatusCRUD.js"></script>
