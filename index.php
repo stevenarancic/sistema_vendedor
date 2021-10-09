@@ -126,7 +126,7 @@ $vendedorDAO->readVendedor();
             })
         }
     </script>
-
+  
     <!-- statusCRUD -->
     <script src="assets/js/StatusCRUD.js"></script>
     <?php require_once 'App/Stucture/statusCRUD.php' ?>
