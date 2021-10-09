@@ -66,7 +66,7 @@ $vendedorDAO->readVendedor();
                             <a class='btn btn-light' href="App/View/editarVendedor.php?id=<?= $vendedor['id'] ?>">
                                 <i class='bi bi-pencil-square'></i>
                             </a>
-                            <button class="btn btn-danger" onclick="alertButton(<?= $vendedor['id'] ?>, 'Deseja mesmo apagar?', 'Essa ação não pode ser desfeita.')">
+                            <button class="btn btn-danger" onclick="alertButton('<?= $vendedor['id'] ?>', 'Deseja mesmo apagar?', 'Essa ação não pode ser desfeita.')">
                                 <i class="bi bi-trash"></i>
                             </button>
                         </div>
@@ -126,7 +126,7 @@ $vendedorDAO->readVendedor();
             })
         }
     </script>
-  
+
     <!-- statusCRUD -->
     <script src="assets/js/StatusCRUD.js"></script>
     <?php require_once 'App/Stucture/statusCRUD.php' ?>
