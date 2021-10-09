@@ -66,7 +66,7 @@ $vendedorDAO->readVendedor();
                             <a class='btn btn-light' href="App/View/editarVendedor.php?id=<?= $vendedor['id'] ?>">
                                 <i class='bi bi-pencil-square'></i>
                             </a>
-                            <button class="btn btn-danger" onclick="alertButton()">
+                            <button class="btn btn-danger" onclick="alertButton(<?= $vendedor['id'] ?>, 'Deseja mesmo apagar?', 'Essa ação não pode ser desfeita.')">
                                 <i class="bi bi-trash"></i>
                             </button>
                         </div>
@@ -108,8 +108,25 @@ $vendedorDAO->readVendedor();
 
     <!-- sweetalert -->
     <script src="node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
-    <script src="assets/js/Alerts.js"></script>
-
+    <script>
+        function alertButton(id, title, text) {
+            Swal.fire({
+                title: title,
+                text: text,
+                icon: 'warning',
+                showConfirmButton: true,
+                confirmButtonText: 'Sim',
+                confirmButtonColor: '#78c696',
+                showDenyButton: true,
+                denyButtonText: 'Não',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location = "App/Controller/DeleteVendedor.php?id=" + id;
+                } else if (result.isDenied) {}
+            })
+        }
+    </script>
+  
     <!-- statusCRUD -->
     <script src="assets/js/StatusCRUD.js"></script>
     <?php require_once 'App/Stucture/statusCRUD.php' ?>
