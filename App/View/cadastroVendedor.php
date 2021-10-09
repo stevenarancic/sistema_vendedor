@@ -38,13 +38,13 @@
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="tel" name="telefone1" class="form-control" placeholder="(99) 99999-9999" maxlength="11" required>
+                    <input type="tel" name="telefone1" class="form-control" placeholder="(99) 99999-9999" maxlength="11" required pattern="[0-9]+$">
                     <label for="">
                         Telefone <i class="bi bi-phone"></i>
                     </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="tel" name="telefone2" class="form-control" placeholder="(99) 99999-9999" maxlength="11">
+                    <input type="tel" name="telefone2" class="form-control" placeholder="(99) 99999-9999" maxlength="11" pattern="[0-9]+$">
                     <label for="">
                         Telefone 2 (opcional) <i class="bi bi-telephone"></i>
                     </label>
