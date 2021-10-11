@@ -54,10 +54,10 @@ $vendedorDAO->readVendedor();
                                 <p class='card-text'>
                                     <?= $vendedor['email']; ?>
                                 </p>
-                                <a href='#' class='btn'>
+                                <a href='https://www.facebook.com/<?php echo $vendedor['facebook'] ?>/' class="btn">
                                     <i class='bi bi-facebook'></i> <?= $vendedor['facebook']; ?>
                                 </a>
-                                <a href='#' class='btn'>
+                                <a href='https://www.instagram.com/<?php echo $vendedor['instagram'] ?>/' class='btn'>
                                     <i class='bi bi-instagram'></i> <?= $vendedor['instagram']; ?>
                                 </a>
                             </div>

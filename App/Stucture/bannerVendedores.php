@@ -54,6 +54,18 @@
                                 <?= $vendedor['instagram']; ?>
                             </span>
                         </a>
+                        <?php
+                        if ($vendedor['telefone2'] != "") {
+                        ?>
+                            <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone2'] ?>" class='btn tooltip1'>
+                                <i class='bi bi-whatsapp text-secondary fs-2'></i>
+                                <span class="tooltiptext">
+                                    <?= $vendedor['telefone2']; ?>
+                                </span>
+                            </a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
             <?php } ?>
