@@ -24,7 +24,7 @@
     </header>
     <main>
         <section class="article container">
-            <form action="../Controller/CreateVendedor.php" method="POST">
+            <form action="../Controller/CreateVendedor.php" method="POST" enctype="multipart/form-data">
                 <div class="form-floating mb-3 mt-4">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" id="inputNome" required>
                     <label for="inputNome">
@@ -76,6 +76,10 @@
                         </span>
                         <input type="text" name="instagram" class="form-control" placeholder="nome_de.usuario123">
                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Imagem de Perfil</label>
+                    <input class="form-control" type="file" name="arquivo">
                 </div>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
                 <a href="../../index.php" class="btn">Cancelar</a>

@@ -18,5 +18,11 @@ $vendedor->setInstagram($_POST['instagram']);
 
 $vendedorDAO->createVendedor($vendedor);
 
+$nomeArquivo = $_FILES['arquivo']['name'];
+$caminhoAtualArquivo = $_FILES['arquivo']['tmp_name'];
+$caminhoSalvar = '../../assets/img/vendedores/' . $nomeArquivo;
+
+move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
+
 $_SESSION['status'] = 'create';
 header('location: ../../index.php');
