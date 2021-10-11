@@ -8,7 +8,7 @@ class VendedorDAO
 {
     public function createVendedor(Vendedor $vendedor)
     {
-        $sql = "INSERT INTO vendedor(nome, sobrenome, telefone1, telefone2, email, facebook, instagram) VALUES(:nome, :sobrenome, :telefone1, :telefone2, :email, :facebook, :instagram)";
+        $sql = "INSERT INTO vendedor(nome, sobrenome, telefone1, telefone2, email, facebook, instagram, imagem_perfil) VALUES(:nome, :sobrenome, :telefone1, :telefone2, :email, :facebook, :instagram, :imagem_perfil)";
 
         $statement = Conexao::getInstance()->prepare($sql);
 
@@ -19,6 +19,7 @@ class VendedorDAO
         $statement->bindValue(':email', $vendedor->getEmail());
         $statement->bindValue(':facebook', $vendedor->getFacebook());
         $statement->bindValue(':instagram', $vendedor->getInstagram());
+        $statement->bindValue(':imagem_perfil', $vendedor->getImagem_perfil());
 
         $statement->execute();
     }

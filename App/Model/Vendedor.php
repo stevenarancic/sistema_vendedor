@@ -4,7 +4,7 @@ namespace App\Model;
 
 class Vendedor
 {
-    private $id, $nome, $sobrenome, $telefone1, $telefone2, $email, $facebook, $instagram;
+    private $id, $nome, $sobrenome, $telefone1, $telefone2, $email, $facebook, $instagram, $imagem_perfil;
 
     public function __construct($nome, $sobrenome, $telefone1)
     {
@@ -169,6 +169,23 @@ class Vendedor
     public function setInstagram($instagram)
     {
         $this->instagram = $instagram;
+
+        return $this;
+    }
+
+    public function getImagem_perfil()
+    {
+        return $this->imagem_perfil;
+    }
+
+    /**
+     * Set the value of imagem_perfil
+     *
+     * @return  self
+     */
+    public function setImagem_perfil($imagem_perfil)
+    {
+        $this->imagem_perfil = $imagem_perfil;
 
         return $this;
     }

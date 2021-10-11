@@ -76,6 +76,7 @@ $vendedorDAO->readVendedor();
             }
             ?>
         </section>
+        <?php $_SESSION['ultimo_id'] = $vendedor['id']; ?>
         <?php require_once 'App/Stucture/bannerVendedores.php' ?>
     </main>
     <footer>

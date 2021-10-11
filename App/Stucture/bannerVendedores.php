@@ -24,7 +24,7 @@
                 <div class="d-flex flex-row align-items-center" style="max-height: 15rem;">
                     <!-- <div class="col-4" style="margin-left: 8%;"></div> -->
                     <div class="col">
-                        <img class="rounded-circle float-end" src="assets/img/vendedores/profile.png" alt="Imagem">
+                        <img class="rounded-circle float-end" src="<?php echo "assets/img/vendedores/" . $vendedor['imagem_perfil'] . ".jpg"; ?>" alt="Imagem Perfil">
                     </div>
                     <div class="ms-3 col" style="text-align: justify;">
                         <h3>
