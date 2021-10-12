@@ -14,6 +14,7 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
     $email = $vendedor['email'];
     $facebook = $vendedor['facebook'];
     $instagram = $vendedor['instagram'];
+    $imagem = $vendedor['imagem_perfil'];
 }
 ?>
 <!DOCTYPE html>
@@ -45,7 +46,7 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
             <button type="button" class="btn mt-4 text-secondary fs-5" onclick="alertButton('Você perderá suas alterações.', 'voltar')">
                 <i class="bi bi-arrow-left"></i> Voltar
             </button>
-            <form id="myForm" action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST">
+            <form id="myForm" action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST" enctype="multipart/form-data">
                 <div class="form-floating mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
                     <label for="">
@@ -98,6 +99,10 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                         </span>
                         <input type="text" name="instagram" class="form-control" placeholder="nome_de.usuario123" value="<?php echo $instagram ?>">
                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Imagem de Perfil</label>
+                    <input class="form-control" type="file" name="arquivo" value="../../assets/img/vendedores/<?php echo $imagem ?>">
                 </div>
                 <button type="submit" class="btn btn-success">Confirmar Edição</button>
                 <button type="button" class="btn" onclick="alertButton('Essa ação não pode ser desfeita.', 'resetar')">Resetar Campos</button>

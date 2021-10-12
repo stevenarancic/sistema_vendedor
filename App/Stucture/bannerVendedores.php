@@ -24,7 +24,7 @@
                 <div class="d-flex flex-row align-items-center" style="max-height: 15rem;">
                     <!-- <div class="col-4" style="margin-left: 8%;"></div> -->
                     <div class="col">
-                        <img class="rounded-circle float-end" src="<?php echo "assets/img/vendedores/" . $vendedor['imagem_perfil'] . ".jpg"; ?>" alt="Imagem Perfil">
+                        <img class="rounded-circle float-end" src="<?php echo "assets/img/vendedores/" . $vendedor['imagem_perfil'] . ".jpg"; ?>" alt="Imagem Perfil" style="object-fit: cover;">
                     </div>
                     <div class="ms-3 col" style="text-align: justify;">
                         <h3>
@@ -33,40 +33,40 @@
                         <h6 class=' mb-2 text-muted'>
                             <?= $vendedor['email']; ?>
                         </h6>
-                        <div class="tooltip">Hover over me
-                            <span class="tooltiptext">Tooltip text</span>
-                        </div>
-                        <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn tooltip1'>
-                            <i class='bi bi-whatsapp text-success fs-2'></i>
-                            <span class="tooltiptext">
-                                <?= $vendedor['telefone1']; ?>
-                            </span>
-                        </a>
-                        <?php
-                        if ($vendedor['telefone2'] != "") {
-                        ?>
-                            <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone2'] ?>" class='btn tooltip1'>
-                                <i class='bi bi-whatsapp text-secondary fs-2'></i>
+                        <div class="d-flex justify-content-start">
+                            <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn tooltip1'>
+                                <i class='bi bi-whatsapp text-success fs-2'></i>
                                 <span class="tooltiptext">
-                                    <?= $vendedor['telefone2']; ?>
+                                    <?= $vendedor['telefone1']; ?>
                                 </span>
                             </a>
-                        <?php
-                        } else {
-                        }
-                        ?>
-                        <a href='https://www.facebook.com/<?php echo $vendedor['facebook'] ?>/' class='btn tooltip1'>
-                            <i class='bi bi-facebook text-primary fs-2'></i>
-                            <span class="tooltiptext">
-                                <?= $vendedor['facebook']; ?>
-                            </span>
-                        </a>
-                        <a href='https://www.instagram.com/<?php echo $vendedor['instagram'] ?>/' class='btn tooltip1'>
-                            <i class='bi bi-instagram text-secondary fs-2'></i>
-                            <span class="tooltiptext">
-                                <?= $vendedor['instagram']; ?>
-                            </span>
-                        </a>
+                            <?php
+                            if ($vendedor['telefone2'] != "") {
+                            ?>
+                                <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone2'] ?>" class='btn tooltip1'>
+                                    <i class='bi bi-whatsapp text-secondary fs-2'></i>
+                                    <span class="tooltiptext">
+                                        <?= $vendedor['telefone2']; ?>
+                                    </span>
+                                </a>
+                            <?php
+                            } else {
+                            }
+                            ?>
+                            <a href='https://www.facebook.com/<?php echo $vendedor['facebook'] ?>/' class='btn tooltip1'>
+                                <i class='bi bi-facebook text-primary fs-2'></i>
+                                <span class="tooltiptext">
+                                    <?= $vendedor['facebook']; ?>
+                                </span>
+                            </a>
+                            <a href='https://www.instagram.com/<?php echo $vendedor['instagram'] ?>/' class='btn tooltip1'>
+                                <i class='bi bi-instagram text-secondary fs-2'></i>
+                                <span class="tooltiptext">
+                                    <?= $vendedor['instagram']; ?>
+                                </span>
+                            </a>
+
+                        </div>
                     </div>
                 </div>
             <?php } ?>

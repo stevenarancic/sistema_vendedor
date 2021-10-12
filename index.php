@@ -26,6 +26,35 @@ $vendedorDAO->readVendedor();
     <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Sistema de Vendedores</title>
+
+    <style>
+        .card-body {
+            padding: 1rem 0 !important;
+        }
+
+        @media (max-width: 900px) {
+            .col-md-7 {
+                text-align: center !important;
+            }
+
+            .col-md-2 a,
+            button {
+                width: 50% !important;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+
+            .col-md-2 a {
+                margin-left: .5rem !important;
+            }
+
+            .col-md-2 button {
+                margin-right: .5rem !important;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-light">
@@ -43,7 +72,10 @@ $vendedorDAO->readVendedor();
             foreach ($vendedorDAO->readVendedor() as $key => $vendedor) { ?>
                 <div class='shadow p-3 mb-4 bg-body rounded' style='width: 100%;'>
                     <div class='row g-0'>
-                        <div class='col-md-8'>
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <img class="rounded-circle float-end" src="<?php echo "assets/img/vendedores/" . $vendedor['imagem_perfil'] . ".jpg"; ?>" alt="Imagem Perfil" style="object-fit: cover; width: 8rem!important; height: 8rem!important">
+                        </div>
+                        <div class='col-md-7'>
                             <div class='card-body'>
                                 <h5 class='card-title'>
                                     <?= $vendedor['nome']; ?> <?= $vendedor['sobrenome']; ?>
@@ -62,7 +94,7 @@ $vendedorDAO->readVendedor();
                                 </a>
                             </div>
                         </div>
-                        <div class='col-md-4 d-flex flex-row-reverse '>
+                        <div class='col-md-2 d-flex flex-row-reverse '>
                             <a class='btn btn-light' href="App/View/editarVendedor.php?id=<?= $vendedor['id'] ?>">
                                 <i class='bi bi-pencil-square'></i>
                             </a>
