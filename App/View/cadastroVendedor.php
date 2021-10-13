@@ -84,6 +84,9 @@
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
                 <a href="../../index.php" class="btn">Cancelar</a>
             </form>
+            <footer>
+                Feito por @SteveNarancic
+            </footer>
         </section>
     </main>
 </body>

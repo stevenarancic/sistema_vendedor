@@ -26,13 +26,13 @@
                     <div class="col">
                         <img class="rounded-circle float-end" src="<?php echo "assets/img/vendedores/" . $vendedor['imagem_perfil'] . ".jpg"; ?>" alt="Imagem Perfil" style="object-fit: cover;">
                     </div>
-                    <div class="ms-3 col" style="text-align: justify;">
+                    <div class="ms-3 me-3 col" style="text-align: justify;">
                         <h3>
                             <?= $vendedor['nome']; ?> <?= $vendedor['sobrenome']; ?>
                         </h3>
-                        <h6 class=' mb-2 text-muted'>
-                            <?= $vendedor['email']; ?>
-                        </h6>
+                        <a href="mailto:<?= $vendedor['email'] ?>" class="mb-2 text-muted" style="text-decoration: none;">
+                            <?php echo $vendedor['email']; ?>
+                        </a>
                         <div class="d-flex justify-content-start">
                             <a href="https://api.whatsapp.com/send?phone=<?php echo $vendedor['telefone1'] ?>" class='btn tooltip1'>
                                 <i class='bi bi-whatsapp text-success fs-2'></i>

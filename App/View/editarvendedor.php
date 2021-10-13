@@ -107,6 +107,9 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                 <button type="submit" class="btn btn-success">Confirmar Edição</button>
                 <button type="button" class="btn" onclick="alertButton('Essa ação não pode ser desfeita.', 'resetar')">Resetar Campos</button>
             </form>
+            <footer>
+                Feito por @SteveNarancic
+            </footer>
         </section>
     </main>
 
