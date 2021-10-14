@@ -33,6 +33,21 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
     <link rel="stylesheet" href="../../assets/css/style.css">
 
     <title>Edição de Vendedor</title>
+
+    <style>
+        @media (min-width: 900px) {
+
+            .col-lg-8,
+            .col-md-8 {
+                padding-left: 1rem !important;
+            }
+        }
+
+        .col-lg-4,
+        .col-md-4 {
+            padding-bottom: 1rem !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,42 +64,13 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                 <i class="bi bi-arrow-left"></i> Voltar
             </button>
             <form id="myForm" action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST" enctype="multipart/form-data">
-                <div class="col-12 d-flex mb-3">
-                    <div class="col-4 d-flex align-items-end">
-                        <img class="rounded" src="<?php echo "../../assets/img/vendedores/" . $imagem . ".jpg"; ?>" alt="Imagem indiponível :(" style="width: 100%; height: ;">
-                    </div>
-                    <div class="col-8 ps-3">
-                        <div>
-                            <label for="">
-                                Facebook <i class="bi bi-facebook"></i>
-                            </label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">
-                                    @
-                                </span>
-                                <input type="text" name="facebook" class="form-control" placeholder="nome.de.usuario11" value="<?php echo $facebook ?>">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="">
-                                Instagram <i class="bi bi-instagram"></i>
-                            </label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">
-                                    @
-                                </span>
-                                <input type="text" name="instagram" class="form-control" placeholder="nome_de.usuario123" value="<?php echo $instagram ?>">
-                            </div>
-                        </div>
-                        <label for="">
-                            Imagem de Perfil
-                        </label>
-                        <input class="form-control mb-3" type="file" name="arquivo" value="../../assets/img/vendedores/<?php echo $imagem ?>">
-                        <a href="../Controller/DeleteImagemPerfil.php?id=<?= ($vendedor['id'] + 1) - 1 ?>" class="btn btn-danger w-100">
-                            Deletar Imagem
-                        </a>
-                    </div>
+                <div class="d-flex justify-content-center">
+                    <img class="rounded-circle" src="<?php echo "../../assets/img/vendedores/" . $imagem . ".jpg"; ?>" alt="Imagem indiponível :(" style="height: auto!important; max-height: 15rem!important; object-fit: cover;">
                 </div>
+                <div class="mb-3 text-center fs-3 text-dark">
+                    <p>Alterar Imagem de Perfil</p>
+                </div>
+                <input class="form-control mb-3" type="file" name="arquivo">
                 <div class="form-floating mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
                     <label for="">
@@ -117,6 +103,24 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                     <label for="">
                         E-Mail <i class="bi bi-envelope"></i>
                     </label>
+                </div>
+                <label for="">
+                    Facebook <i class="bi bi-facebook"></i>
+                </label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">
+                        @
+                    </span>
+                    <input type="text" name="facebook" class="form-control" placeholder="nome.de.usuario11" value="<?php echo $facebook ?>">
+                </div>
+                <label for="">
+                    Instagram <i class="bi bi-instagram"></i>
+                </label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">
+                        @
+                    </span>
+                    <input type="text" name="instagram" class="form-control" placeholder="nome_de.usuario123" value="<?php echo $instagram ?>">
                 </div>
                 <button type="submit" class="btn btn-success">
                     Confirmar Edição

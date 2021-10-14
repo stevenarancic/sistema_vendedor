@@ -1,7 +1,5 @@
 <?php
 
-use App\Model\Conexao;
-
 session_start();
 
 include_once 'vendor/autoload.php';

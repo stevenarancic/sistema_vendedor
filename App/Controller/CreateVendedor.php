@@ -26,5 +26,7 @@ $vendedor->setImagem_perfil($nomeArquivo);
 
 $vendedorDAO->createVendedor($vendedor);
 
+setcookie('ultimoIdVendedor', Conexao::getInstance()->lastInsertId(), time() + (86400 * 30), "/"); // 86400 = 1 dia. Cookie dura 1 mês.
+
 $_SESSION['status'] = 'create';
 header('location: ../../index.php');
