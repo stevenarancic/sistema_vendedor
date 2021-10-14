@@ -63,6 +63,26 @@ class VendedorDAO
         $statement->execute();
     }
 
+    public function updateImagemPerfil($nomeArquivo, $novoNomeArquivo)
+    {
+        $caminhoAtualArquivo = $_FILES['arquivo']['tmp_name'];
+        $caminhoNovoArquivo = "../../assets/img/vendedores/$novoNomeArquivo.jpg";
+
+        if (file_exists($caminhoNovoArquivo)) {
+            if ($nomeArquivo != "") {
+                if (unlink($caminhoNovoArquivo)) {
+                    move_uploaded_file($caminhoAtualArquivo, $caminhoNovoArquivo);
+                } else {
+                    echo 'A imagem de perfil não pode ser apagada! nome do arquivo: ' . $novoNomeArquivo . '<br>Erro!';
+                }
+            }
+        } else {
+            if ($nomeArquivo != "") {
+                move_uploaded_file($caminhoAtualArquivo, $caminhoNovoArquivo);
+            }
+        }
+    }
+
     public function deleteVendedor($id)
     {
         $sql = "DELETE FROM vendedor WHERE id = :id";
