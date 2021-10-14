@@ -70,7 +70,7 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                 <div class="mb-1 text-center fs-3 text-dark">
                     <p>Alterar Imagem de Perfil</p>
                 </div>
-                <input class="form-control mb-3" type="file" name="arquivo" value="teste">
+                <input class="form-control mb-3" type="file" name="arquivo">
                 <div class="form-floating mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
                     <label for="">
