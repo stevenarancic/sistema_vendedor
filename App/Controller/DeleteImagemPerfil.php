@@ -1,15 +1,5 @@
 <?php
-session_start();
-
-require_once '../../vendor/autoload.php';
-
-use App\Model as Model;
-
-$vendedorDAO = new Model\VendedorDAO();
-
-$vendedorDAO->deleteVendedor($_GET['id']);
-
-$nomeArquivo = ($_GET['id'] + 1) - 1;
+$nomeArquivo = $_GET['id'];
 $caminhoArquivo = '../../assets/img/vendedores/' . $nomeArquivo . '.jpg';
 
 if (unlink($caminhoArquivo)) {
@@ -19,4 +9,4 @@ if (unlink($caminhoArquivo)) {
 }
 
 $_SESSION['status'] = 'delete';
-header('location: ../../index.php');
+header('location: ../View/editarvendedor.php?id=' . $_GET['id']);

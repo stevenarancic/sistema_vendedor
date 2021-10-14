@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../../vendor/autoload.php';
 
 use App\Model as Model;
@@ -47,6 +49,42 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                 <i class="bi bi-arrow-left"></i> Voltar
             </button>
             <form id="myForm" action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST" enctype="multipart/form-data">
+                <div class="col-12 d-flex mb-3">
+                    <div class="col-4 d-flex align-items-end">
+                        <img class="rounded" src="<?php echo "../../assets/img/vendedores/" . $imagem . ".jpg"; ?>" alt="Imagem indiponível :(" style="width: 100%; height: ;">
+                    </div>
+                    <div class="col-8 ps-3">
+                        <div>
+                            <label for="">
+                                Facebook <i class="bi bi-facebook"></i>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">
+                                    @
+                                </span>
+                                <input type="text" name="facebook" class="form-control" placeholder="nome.de.usuario11" value="<?php echo $facebook ?>">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="">
+                                Instagram <i class="bi bi-instagram"></i>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">
+                                    @
+                                </span>
+                                <input type="text" name="instagram" class="form-control" placeholder="nome_de.usuario123" value="<?php echo $instagram ?>">
+                            </div>
+                        </div>
+                        <label for="">
+                            Imagem de Perfil
+                        </label>
+                        <input class="form-control mb-3" type="file" name="arquivo" value="../../assets/img/vendedores/<?php echo $imagem ?>">
+                        <a href="../Controller/DeleteImagemPerfil.php?id=<?= ($vendedor['id'] + 1) - 1 ?>" class="btn btn-danger w-100">
+                            Deletar Imagem
+                        </a>
+                    </div>
+                </div>
                 <div class="form-floating mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
                     <label for="">
@@ -73,39 +111,19 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                 </div>
                 <div class="form-floating mb-3">
                     <input type="email" name="email" class="form-control" placeholder="exemplo@exemplo.com.br" value="<?php echo $email ?>">
-                    <div id="emailHelp" class="form-text">Não compartilharemos seu e-mail com ninguém.</div>
+                    <div id="emailHelp" class="form-text">
+                        Não compartilharemos seu e-mail com ninguém.
+                    </div>
                     <label for="">
                         E-Mail <i class="bi bi-envelope"></i>
                     </label>
                 </div>
-                <div class="mb-3">
-                    <label for="">
-                        Facebook <i class="bi bi-facebook"></i>
-                    </label>
-                    <div class="input-group">
-                        <span class="input-group-text" id="basic-addon1">
-                            @
-                        </span>
-                        <input type="text" name="facebook" class="form-control" placeholder="nome.de.usuario11" value="<?php echo $facebook ?>">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="">
-                        Instagram <i class="bi bi-instagram"></i>
-                    </label>
-                    <div class="input-group">
-                        <span class="input-group-text" id="basic-addon1">
-                            @
-                        </span>
-                        <input type="text" name="instagram" class="form-control" placeholder="nome_de.usuario123" value="<?php echo $instagram ?>">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Imagem de Perfil</label>
-                    <input class="form-control" type="file" name="arquivo" value="../../assets/img/vendedores/<?php echo $imagem ?>">
-                </div>
-                <button type="submit" class="btn btn-success">Confirmar Edição</button>
-                <button type="button" class="btn" onclick="alertButton('Essa ação não pode ser desfeita.', 'resetar')">Resetar Campos</button>
+                <button type="submit" class="btn btn-success">
+                    Confirmar Edição
+                </button>
+                <button type="button" class="btn" onclick="alertButton('Essa ação não pode ser desfeita.', 'resetar')">
+                    Resetar Campos
+                </button>
             </form>
             <footer>
                 Feito por @SteveNarancic
@@ -143,6 +161,13 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
             })
         }
     </script>
+
+    <!-- jquery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- statusCRUD -->
+    <script src="../../assets/js/StatusCRUD.js"></script>
+    <?php require_once '../Stucture/statusCRUD.php' ?>
 </body>
 
 </html>

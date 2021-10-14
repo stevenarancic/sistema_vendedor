@@ -6,13 +6,14 @@ session_start();
 
 require_once '../../vendor/autoload.php';
 
-$nomeArquivo = $_SESSION['ultimo_id'] + 1;
+$nomeArquivo = $_COOKIE['ultimoIdVendedor'] + 1;
 $caminhoAtualArquivo = $_FILES['arquivo']['tmp_name'];
 $caminhoSalvar = '../../assets/img/vendedores/' . $nomeArquivo . '.jpg';
 
 move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
 
 use App\Model as Model;
+use App\Model\Conexao;
 
 $vendedor = new Model\Vendedor($_POST['nome'], $_POST['sobrenome'], $_POST['telefone1']);
 $vendedorDAO = new Model\VendedorDAO();
@@ -26,6 +27,4 @@ $vendedor->setImagem_perfil($nomeArquivo);
 $vendedorDAO->createVendedor($vendedor);
 
 $_SESSION['status'] = 'create';
-unset($_SESSION['ultimo_id']);
-
 header('location: ../../index.php');

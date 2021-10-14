@@ -1,10 +1,15 @@
 <?php
+
+use App\Model\Conexao;
+
 session_start();
 
 include_once 'vendor/autoload.php';
 
 $vendedorDAO = new \App\Model\VendedorDAO();
 $vendedorDAO->readVendedor();
+
+include_once 'App/Stucture/gerarCookieUltimoID.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +113,6 @@ $vendedorDAO->readVendedor();
             }
             ?>
         </section>
-        <?php $_SESSION['ultimo_id'] = $vendedor['id']; ?>
         <?php require_once 'App/Stucture/bannerVendedores.php' ?>
     </main>
     <footer>
