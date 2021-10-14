@@ -30,12 +30,8 @@ if (file_exists('../../assets/img/vendedores/' . (($_GET['id'] + 1) - 1) . '.jpg
     }
 } else {
     if ($nomeArquivo != "") {
-        if (unlink('../../assets/img/vendedores/' . (($_GET['id'] + 1) - 1) . '.jpg')) {
-            $caminhoSalvar = '../../assets/img/vendedores/' . (($_GET['id'] + 1) - 1) . '.jpg';
-            move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
-        } else {
-            echo 'A imagem de perfil não pode ser apagada! nome do arquivo: ' . $filename . '<br>Erro!';
-        }
+        $caminhoSalvar = '../../assets/img/vendedores/' . (($_GET['id'] + 1) - 1) . '.jpg';
+        move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
     }
 }
 $vendedorDAO = new Model\VendedorDAO();

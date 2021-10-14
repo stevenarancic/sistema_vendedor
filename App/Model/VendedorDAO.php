@@ -74,8 +74,10 @@ class VendedorDAO
         $statement->execute();
     }
 
-    public function deleteImagemPerfil($nomeArquivo, $caminhoArquivo)
+    public function deleteImagemPerfil($nomeArquivo)
     {
+        $caminhoArquivo = '../../assets/img/vendedores/' . $nomeArquivo . '.jpg';
+
         if (unlink($caminhoArquivo)) {
             echo 'O arquivo ' . $nomeArquivo . ' foi deletado !';
         } else {

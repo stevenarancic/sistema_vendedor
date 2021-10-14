@@ -12,7 +12,7 @@ $vendedorDAO->deleteVendedor($_GET['id']);
 $nomeArquivo = ($_GET['id'] + 1) - 1;
 $caminhoArquivo = '../../assets/img/vendedores/' . $nomeArquivo . '.jpg';
 
-$vendedorDAO->deleteImagemPerfil($nomeArquivo, $caminhoArquivo);
+$vendedorDAO->deleteImagemPerfil($nomeArquivo);
 
 $_SESSION['status'] = 'delete';
 header('location: ../../index.php');
