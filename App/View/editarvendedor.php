@@ -64,13 +64,13 @@ foreach ($vendedorDAO->filtrarVendedor($_GET['id']) as $vendedor) {
                 <i class="bi bi-arrow-left"></i> Voltar
             </button>
             <form id="myForm" action="../Controller/UpdateVendedor.php?id=<?= $vendedor['id'] ?>" method="POST" enctype="multipart/form-data">
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mb-2">
                     <img class="rounded-circle" src="<?php echo "../../assets/img/vendedores/" . $imagem . ".jpg"; ?>" alt="Imagem indiponível :(" style="height: auto!important; max-height: 15rem!important; object-fit: cover;">
                 </div>
-                <div class="mb-3 text-center fs-3 text-dark">
+                <div class="mb-1 text-center fs-3 text-dark">
                     <p>Alterar Imagem de Perfil</p>
                 </div>
-                <input class="form-control mb-3" type="file" name="arquivo">
+                <input class="form-control mb-3" type="file" name="arquivo" value="teste">
                 <div class="form-floating mb-3">
                     <input type="text" name="nome" class="form-control" placeholder="ex: Carlos" value="<?php echo $nome ?>" required>
                     <label for="">
