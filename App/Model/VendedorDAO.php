@@ -74,6 +74,15 @@ class VendedorDAO
         $statement->execute();
     }
 
+    public function deleteImagemPerfil($nomeArquivo, $caminhoArquivo)
+    {
+        if (unlink($caminhoArquivo)) {
+            echo 'O arquivo ' . $nomeArquivo . ' foi deletado !';
+        } else {
+            echo 'A imagem de perfil não pode ser apagada! nome do arquivo: ' . $nomeArquivo;
+        }
+    }
+
     public function filtrarVendedor($id)
     {
         $sql = "SELECT * FROM vendedor WHERE id = :id";
