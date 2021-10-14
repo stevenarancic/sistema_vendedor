@@ -19,7 +19,7 @@ if (!isset($_COOKIE['ultimoIdVendedor'])) {
 
     $vendedorDAO->createVendedor($vendedor);
 
-    setcookie('ultimoIdVendedor', Conexao::getInstance()->lastInsertId(), time() + (86400 * 30), "/"); // 86400 = 1 dia. Cookie dura 1 mês.
+    setcookie('ultimoIdVendedor', Conexao::getInstance()->lastInsertId(), time() + (86400 * 30), "/"); // 86400 = 1 dia. Cookie dura 1 mês. Registro vazio que logo após criado é deletado.
 
     $vendedorDAO->deleteVendedor($_COOKIE['ultimoIdVendedor'] + 1);
 }
