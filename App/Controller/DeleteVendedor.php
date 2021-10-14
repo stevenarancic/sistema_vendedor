@@ -10,7 +10,6 @@ $vendedorDAO = new Model\VendedorDAO();
 $vendedorDAO->deleteVendedor($_GET['id']);
 
 $nomeArquivo = ($_GET['id'] + 1) - 1;
-$caminhoArquivo = '../../assets/img/vendedores/' . $nomeArquivo . '.jpg';
 
 $vendedorDAO->deleteImagemPerfil($nomeArquivo);
 
