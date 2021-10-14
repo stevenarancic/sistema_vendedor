@@ -24,6 +24,13 @@ class VendedorDAO
         $statement->execute();
     }
 
+    public function createImagemPerfil($nomeArquivo, $caminhoAtualArquivo)
+    {
+        $caminhoSalvar = '../../assets/img/vendedores/' . $nomeArquivo . '.jpg';
+
+        move_uploaded_file($caminhoAtualArquivo, $caminhoSalvar);
+    }
+
     public function readVendedor()
     {
         $sql = "SELECT * FROM vendedor";
