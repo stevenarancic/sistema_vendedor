@@ -18,4 +18,5 @@ if (unlink($caminhoArquivo)) {
     echo 'A imagem de perfil não pode ser apagada! nome do arquivo: ' . $filename;
 }
 
+$_SESSION['status'] = 'delete';
 header('location: ../../index.php');
