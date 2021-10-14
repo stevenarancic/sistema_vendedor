@@ -1,5 +1,7 @@
 <?php
 
+// Esse arquivo serve para gerar um cookie que dura um mês. A informação contida nesse cookie é qual o último ID de vendedor cadastrado no banco de dados. Serve para que ao cadastrar um novo vendedor, a imagem de perfil sempre venha com o ID do novo vendedor como nome.
+
 use App\Model\Conexao;
 
 $vendedorDAO = new \App\Model\VendedorDAO();
